@@ -12,10 +12,10 @@ class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showProdictListView()
+        showProductListView()
     }
     
-    private func showProdictListView() {
+    private func showProductListView() {
         let viewsFactory = ProductListViewsFactory()
         let builder = ProductListBuilder(viewFactory: viewsFactory)
         let router = ProductListRouter(routingHandler: self, builder: builder)

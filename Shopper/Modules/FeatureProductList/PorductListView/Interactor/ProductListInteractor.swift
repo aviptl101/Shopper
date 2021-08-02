@@ -17,7 +17,7 @@ protocol ProductListInteracting {
 }
 
 final class ProductListInteractor: ProductListInteracting {
-    var dbManager: DBManagerManaging = DataBaseManager()
+    var dbManager: DataBaseManaging = DataBaseManager()
     var productList: [ProductModel] = [] {
         didSet {
             createProductCellModels(from: productList)

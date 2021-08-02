@@ -25,8 +25,7 @@ class ProductItemCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //animateImageView()
+    
     }
     
     func configure(cellModel: ProductItemCellModel) {

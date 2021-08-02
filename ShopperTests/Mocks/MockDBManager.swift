@@ -8,7 +8,7 @@
 import Foundation
 @testable import Shopper
 
-final class MockDBManager: DBManagerManaging {
+final class MockDBManager: DataBaseManaging {
     enum MethodHandler {
         case increaseQuantity
         case decreaseQuantity

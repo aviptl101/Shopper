@@ -37,7 +37,7 @@ enum RequestEndPoint {
     public var parameters: [URLQueryItem] {
         switch self {
         case .getProducts:
-            var query = [URLQueryItem]()
+            let query = [URLQueryItem]()
             return query
         }
     }

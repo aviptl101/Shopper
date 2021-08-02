@@ -10,7 +10,7 @@ import Foundation
 
 typealias CellModelResults = Results<ProductItemCellModel>
 
-protocol DBManagerManaging {
+protocol DataBaseManaging {
     func increaseQuantity(for id: Int)
     func decreaseQuantity(for id: Int)
     func getProductCellModels(offset: Int) -> CellModelResults?
@@ -22,7 +22,7 @@ protocol DBManagerManaging {
     var resultsCount: Int { get }
 }
 
-final class DataBaseManager: DBManagerManaging {
+final class DataBaseManager: DataBaseManaging {
     var realm: Realm!
     var cellModelResults: CellModelResults?
     var bindResults: ((CellModelResults?) -> ())?

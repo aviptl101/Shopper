@@ -43,6 +43,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.95800970019999998" green="1" blue="0.97055508800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
                 <outlet property="nameLbl" destination="r1M-Wy-pym" id="hLe-F8-QAF"/>
                 <outlet property="productImageView" destination="paF-wo-z6x" id="QYl-lC-gM7"/>
