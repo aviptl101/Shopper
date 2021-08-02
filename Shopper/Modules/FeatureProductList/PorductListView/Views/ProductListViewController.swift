@@ -14,9 +14,8 @@ protocol ProductListViewable: class {
 }
 
 private enum Constants {
-    static let barButtonSize: CGFloat = 0
+    static let barButtonSize: CGFloat = 50
     static let badgeSize: CGFloat = 18
-    static let cartCountKey = "cartCountKey"
 }
 
 public final class ProductListViewController: UIViewController {
@@ -29,11 +28,8 @@ public final class ProductListViewController: UIViewController {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.clipsToBounds = true
         view.addSubview(containerView)
-        view.addSubview(activityIndicator)
-        view.bringSubviewToFront(activityIndicator)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.refreshControl = self.refreshControl
         collectionView.clipsToBounds = false
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +47,7 @@ public final class ProductListViewController: UIViewController {
     private(set) lazy var activityIndicator = UIActivityIndicatorView(style: .large)
 
     private(set) lazy var badgeLabel: UILabel = {
-        let badge = UILabel(frame: CGRect(x: Constants.badgeSize - 5, y: -(Constants.badgeSize - 9) / 2, width: Constants.badgeSize, height: Constants.badgeSize))
+        let badge = UILabel(frame: CGRect(x: 0, y: 0, width: Constants.badgeSize, height: Constants.badgeSize))
         badge.layer.cornerRadius = badge.bounds.size.height / 2
         badge.textAlignment = .center
         badge.layer.masksToBounds = true
@@ -87,6 +83,10 @@ public final class ProductListViewController: UIViewController {
         navigationItem.title = "List"
         refreshControl.addTarget(self, action: #selector(fetchProducts), for: .valueChanged)
         addCartViewWithBadge()
+        collectionView.refreshControl = self.refreshControl
+        view.addSubview(activityIndicator)
+        view.bringSubviewToFront(activityIndicator)
+        activityIndicator.color = .darkGray
         activityIndicator.center = view.center
         view.bringSubviewToFront(activityIndicator)
         getBadgeCount()
@@ -100,6 +100,7 @@ public final class ProductListViewController: UIViewController {
         let cartButton = UIButton(frame: CGRect(x: 0, y: 0, width: Constants.barButtonSize, height: Constants.barButtonSize))
         cartButton.addTarget(self, action: #selector(cartButtonAction), for: .touchUpInside)
         cartButton.setImage(UIImage(named: "CartIcon"), for: .normal)
+        badgeLabel.frame.origin = CGPoint(x: Constants.barButtonSize/2, y: 0)
         cartButton.addSubview(badgeLabel)
         cartButton.bringSubviewToFront(badgeLabel)
         view.bringSubviewToFront(badgeLabel)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,14 @@
             <rect key="frame" x="0.0" y="0.0" width="406" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="406" height="122"/>
+                <rect key="frame" x="44" y="0.0" width="362" height="122"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="paF-wo-z6x">
                         <rect key="frame" x="8" y="8" width="122" height="106"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="122" id="cTo-qB-imN"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
@@ -38,7 +41,6 @@
                     <constraint firstItem="paF-wo-z6x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BUz-S4-SKP"/>
                     <constraint firstItem="r1M-Wy-pym" firstAttribute="leading" secondItem="paF-wo-z6x" secondAttribute="trailing" constant="8" id="SMy-61-h1H"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r1M-Wy-pym" secondAttribute="trailing" constant="5" id="eFd-yc-Duk"/>
-                    <constraint firstItem="paF-wo-z6x" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="ncg-ug-Ilr"/>
                     <constraint firstItem="paF-wo-z6x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="oj8-85-jSt"/>
                 </constraints>
             </tableViewCellContentView>
